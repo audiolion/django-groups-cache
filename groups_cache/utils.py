@@ -1,5 +1,5 @@
-from django.conf import settings
 from django.core.cache import cache
+from .default_settings import CACHE_TIMEOUT
 
 
 def generate_cache_key(user):
@@ -17,5 +17,5 @@ def get_group(user):
     if groups is not None:
         return groups
     groups = user.groups.all()
-    cache.set(key, groups, settings.CACHE_TIMEOUT)
+    cache.set(key, groups, CACHE_TIMEOUT)
     return groups
