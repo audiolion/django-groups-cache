@@ -8,7 +8,7 @@ django-groups-cache
 .. image:: https://travis-ci.org/audiolion/django-groups-cache.png?branch=master
     :target: https://travis-ci.org/audiolion/django-groups-cache
 
-Caches the groups a user is in so requests don't have to cmake calls to the database to check group status.
+Caches the groups a user is in so requests don't have to make calls to the database to check group status.
 
 Documentation
 -------------
