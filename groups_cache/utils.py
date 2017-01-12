@@ -8,7 +8,7 @@ hashids = Hashids(min_length=5)
 
 def generate_cache_key(user):
     hashid = hashids.encode(user.id)
-    return "groups:middleware:{0}".format(hash)
+    return "groups:middleware:{0}".format(hashid)
 
 def cache_groups(user):
     # user must be authenticated to cache groups
