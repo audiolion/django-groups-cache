@@ -32,10 +32,40 @@ Add it to your `INSTALLED_APPS`:
         ...
     )
 
+Add the middleware to your `MIDDLEWARE_CLASSES`:
+
+.. code-block:: python
+
+    MIDDLEWARE_CLASSES = (
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        ...
+        'groups_cache.middleware.GroupsCacheMiddleware',
+    )
+
 Features
 --------
 
-* TODO
+* Adds `groups_cache` property to `request` object
+* Provides templatetag `has_group`
+* Invalidates cache on `User` or `Group` model changes
+
+Checking in a Django Template if the user is in a group name:
+
+.. code-block:: python
+
+    {% if "admins" in request.groups_cache %}
+      <a href="/admin">Admin Panel</a>
+    {% endif %}
+
+    # or use templatetag, note that templatetag is slower
+
+    {% load has_group %}
+
+    {% if request.user|has_group:"admins" %}
+      <a href="/admin">Admin Panel</a>
+    {% endif %}
+
 
 Running Tests
 -------------
