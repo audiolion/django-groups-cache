@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.http import HttpResponse
 
-from .utils import get_group
+from .utils import cache_groups
 
 
 class GroupsCacheMiddleware(object):
@@ -22,8 +22,8 @@ class GroupsCacheMiddleware(object):
 
     @property
     def lazy_groups(self):
-        return get_group(self.user)
+        return cache_groups(self.user)
 
     def process_request(self, request):
         self.user = request.user
-        request.__class__.my_groups = self.lazy_groups
+        request.__class__.groups_cache = self.lazy_groups
