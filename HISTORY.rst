@@ -3,6 +3,33 @@
 History
 -------
 
+0.5.5 (2017-01-13)
+++++++++++++++++++
+
+* Bug fix for templatetag `has_group`
+* Tests added for 100% coverage of templatetag folder
+
+0.5.5 (2017-01-12)
+++++++++++++++++++
+
+* Omit urls.py from coverage report (not used but needed for django package)
+* Omit apps.py from coverage report (default apps file)
+
+0.5.4 (2017-01-12)
+++++++++++++++++++
+
+* Removal of py32/django1.8 support from Travis CI build
+
+0.5.3 (2017-01-12)
+++++++++++++++++++
+
+* Fixing .travis.yml file and CI builds
+
+0.5.2 (2017-01-12)
+++++++++++++++++++
+
+* Typo in README.rst
+
 0.5.1 (2017-01-12)
 ++++++++++++++++++
 
