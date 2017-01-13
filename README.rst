@@ -2,10 +2,10 @@
 django-groups-cache
 =============================
 
-.. image:: https://badge.fury.io/py/django-groups-cache.png
+.. image:: https://badge.fury.io/py/django-groups-cache.svg
     :target: https://badge.fury.io/py/django-groups-cache
 
-.. image:: https://travis-ci.org/audiolion/django-groups-cache.png?branch=master
+.. image:: https://travis-ci.org/audiolion/django-groups-cache.svg?branch=master
     :target: https://travis-ci.org/audiolion/django-groups-cache
 
 .. image:: https://codecov.io/gh/audiolion/django-groups-cache/branch/master/graph/badge.svg
