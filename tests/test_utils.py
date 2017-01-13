@@ -10,7 +10,10 @@ from groups_cache import signals
 class TestCacheGroups(TestCase):
     def setUp(self):
         self.user = User.objects.create_user('test_user2', 'test2@example.com', 'test_password2')
-        self.client.force_login(self.user)
+        try:
+            self.client.force_login(self.user)
+        except AttributeError:
+            pass
         self.request = HttpRequest()
         self.request.session = self.client.session
         self.request.user = self.user
