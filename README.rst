@@ -16,7 +16,7 @@ Caches the groups a user is in so requests don't have to make calls to the datab
 Support
 -------
 
-Currently supporting Django 1.8, 1.9, 1.10 and Python 2.7/Python 3 where support for versions alines with
+Currently supporting Django 1.8, 1.9, 1.10 and Python 2.7/Python 3 where support for versions aligns with
 Django's support. See the `tox.ini` file for specific Python and Django version pairings.
 
 Documentation
