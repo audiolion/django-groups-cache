@@ -9,7 +9,7 @@ django-groups-cache
     :target: https://travis-ci.org/audiolion/django-groups-cache
 
 .. image:: https://codecov.io/gh/audiolion/django-groups-cache/branch/master/graph/badge.svg
- +    :target: https://codecov.io/gh/audiolion/django-groups-cache
+    :target: https://codecov.io/gh/audiolion/django-groups-cache
 
 Caches the groups a user is in so requests don't have to make calls to the database to check group status.
 
