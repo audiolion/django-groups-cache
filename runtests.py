@@ -17,6 +17,7 @@ try:
             "django.contrib.auth",
             "django.contrib.contenttypes",
             "django.contrib.sites",
+            "django.contrib.sessions",
             "groups_cache",
         ],
         SITE_ID=1,
