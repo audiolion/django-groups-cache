@@ -13,6 +13,6 @@ def has_group(user, group_name):
         return False
     key = generate_cache_key(user)
     groups = cache.get(key)
-    if groups and group in groups:
+    if groups and group_name in groups:
         return True
     return False
