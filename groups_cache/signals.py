@@ -23,4 +23,7 @@ def invalidate_user_m2m_cache(sender, **kwargs):
     key = generate_cache_key(kwargs.get('instance'))
     cache.delete(key)
 
-m2m_changed.connect(invalidate_user_m2m_cache, sender=Group.user_set.through)
+try:
+    m2m_changed.connect(invalidate_user_m2m_cache, sender=Group.user_set.through)
+except AttributeError:
+    m2m_changed.connect(invalidate_user_m2m_cache, sender=Group.user_set.related.through)
