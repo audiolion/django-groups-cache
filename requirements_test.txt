@@ -5,3 +5,4 @@ tox>=1.7.0
 tox-pyenv==1.0.3
 
 # Additional test requirements go here
+codecov==2.0.5
