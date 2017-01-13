@@ -10,7 +10,7 @@ class GroupsCacheMiddleware(object):
         self.get_response = get_response
         super(GroupsCacheMiddleware, self).__init__()
 
-    def __call__(self, request):
+    def __call__(self, request): # pragma: no cover
         response = None
         if hasattr(self, 'process_request'):
             response = self.process_request(request)
