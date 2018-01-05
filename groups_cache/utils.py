@@ -1,5 +1,6 @@
 from django.core.cache import cache
 from .default_settings import CACHE_TIMEOUT
+from .compat import is_authenticated
 
 from hashids import Hashids
 
@@ -12,7 +13,7 @@ def generate_cache_key(user):
 
 def cache_groups(user):
     # user must be authenticated to cache groups
-    if not user.is_authenticated():
+    if not is_authenticated(user):
         return None
 
     key = generate_cache_key(user)

@@ -1,11 +1,12 @@
+import django
 from django.core.cache import cache
 from django.contrib.auth.models import AnonymousUser, User, Group
 from django.test import TestCase
 from mock import Mock
 import mock
+from groups_cache.compat import is_authenticated
 from groups_cache.middleware import GroupsCacheMiddleware
 from groups_cache import signals
-
 
 class TestMiddleware(TestCase):
 
@@ -13,11 +14,17 @@ class TestMiddleware(TestCase):
         self.gcm = GroupsCacheMiddleware()
         self.request = Mock()
         self.user = Mock(id=123, name='bob')
-        self.user.is_authenticated.return_value = True
+        if django.VERSION < (1, 10):
+            self.user.is_authenticated.return_value = True
+        else:
+            self.user.is_authenticated = True
 
     def test_request_should_not_cache_anonymous(self):
         self.request.user = Mock()
-        self.request.user.is_authenticated.return_value = False
+        if django.VERSION < (1, 10):
+            self.request.user.is_authenticated.return_value = False
+        else:
+            self.request.user.is_authenticated = False
         self.assertEqual(self.gcm.process_request(self.request), None)
         self.assertIsNone(self.request.groups_cache)
         cache.clear()
