@@ -45,7 +45,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='django-groups-cache',
-    version='1.0.1',
+    version='1.0.2',
     description="""Caches the groups a user is in so requests don't have to make calls to the database to check group status.""",
     long_description=readme + '\n\n' + history,
     author='Ryan Castner',
