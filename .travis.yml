@@ -14,6 +14,7 @@ env:
   - DJANGO='Django>=1.11,<2.0'
   - DJANGO='Django>=2.0,<2.1'
 
+dist: xenial
 matrix:
   fast_finish: true
   exclude:
