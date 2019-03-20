@@ -37,7 +37,7 @@ Add it to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'groups_cache.apps.GroupsCacheConfig',
+        'groups_cache',
         ...
     )
 
