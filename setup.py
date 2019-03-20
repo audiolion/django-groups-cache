@@ -55,7 +55,9 @@ setup(
         'groups_cache',
     ],
     include_package_data=True,
-    install_requires=[],
+    install_requires=[
+        'hashids',
+    ],
     license="MIT",
     zip_safe=False,
     keywords='django-groups-cache',
